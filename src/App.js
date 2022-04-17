@@ -1,15 +1,13 @@
 import "./App.css";
+import ItemListContainer from "./components/ItemListContainer";
+import NavBar from "./components/NavBar";
 
 function App() {
   return (
-    <div className='App'>
-      <h1> Hola mundo! </h1> <hr />
-      <h2> ¿Quién soy ? </h2>
-      <p>
-        ¿Qué tal ? , soy Javier Alejandro Vargas Mexico y este es mi primera
-        entrega del curso de Reactjs en CODERHOUSE.
-      </p>
-    </div>
+    <>
+      <NavBar />
+      <ItemListContainer name='Hola, Coders!' />
+    </>
   );
 }
 
