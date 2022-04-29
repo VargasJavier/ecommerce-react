@@ -1,8 +1,15 @@
-const ItemListContainer = (props) => {
+import NavBar from "./NavBar";
+import ItemList from "./ItemList";
+
+const ItemListContainer = () => {
   return (
-    <div className='m-3 p-2 rounded-md bg-sky-800 h-3/6 flex justify-center items-center'>
-      <h1>{props.name}</h1>
-    </div>
+    <>
+      <NavBar />
+      <h1 className='text-5xl text-center text-white p-8'>
+        Camisetas a la venta
+      </h1>
+      <ItemList />
+    </>
   );
 };
 export default ItemListContainer;
