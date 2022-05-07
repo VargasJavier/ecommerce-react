@@ -1,6 +1,9 @@
+import { Link } from "react-router-dom";
+
 const Item = ({ id, name, description, price, thumbnail }) => {
   return (
-    <div
+    <Link
+      to={`/productos/${id}`}
       className='bg-white p-2 rounded-lg max-w-xs w-auto inline-block cursor-pointer'
       key={id}
     >
@@ -12,7 +15,7 @@ const Item = ({ id, name, description, price, thumbnail }) => {
       <p className='text-sm inline-block'>{description}</p>
       <br />
       <h4 className='text-2xl font-bold text-blue-400 inline-block'>{price}</h4>
-    </div>
+    </Link>
   );
 };
 export default Item;

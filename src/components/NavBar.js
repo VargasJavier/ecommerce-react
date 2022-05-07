@@ -1,14 +1,15 @@
 import CartWidget from "./CartWidget";
 import logoNew from "../assets/img/logoNew.png";
+import { Link } from "react-router-dom";
 
 const NavBar = () => {
   return (
     <>
       {/* Logo y componente CartWidget */}
       <div className='navbar bg-base-100'>
-        <div className='flex-1'>
+        <Link to='/' className='flex-1'>
           <img className='btn btn-ghost normal-case' src={logoNew} />
-        </div>
+        </Link>
         <div className='flex-none'>
           <CartWidget />
           <div className='dropdown dropdown-end'>

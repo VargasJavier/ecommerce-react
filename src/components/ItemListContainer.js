@@ -8,8 +8,10 @@ const ItemListContainer = () => {
   useEffect(() => {
     const getProducts = new Promise((res, rej) => {
       setTimeout(() => {
-        res(dataProducts);
-      }, 2000);
+        dataProducts
+          ? res(dataProducts)
+          : rej((err) => console.log("Error: ", err));
+      }, 500);
     });
 
     getProducts

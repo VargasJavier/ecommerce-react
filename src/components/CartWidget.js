@@ -1,6 +1,6 @@
 const CartWidget = () => {
   return (
-    <div className='dropdown dropdown-end'>
+    <section to='/producto' className='dropdown dropdown-end'>
       <label tabindex='0' className='btn btn-ghost btn-circle'>
         <div className='indicator'>
           <svg
@@ -32,7 +32,7 @@ const CartWidget = () => {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 export default CartWidget;
