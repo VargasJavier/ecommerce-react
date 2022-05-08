@@ -3,8 +3,8 @@ import { Link } from "react-router-dom";
 const Item = ({ id, name, description, price, thumbnail }) => {
   return (
     <Link
-      to={`/productos/${id}`}
-      className='bg-white p-2 rounded-lg max-w-xs w-auto inline-block cursor-pointer'
+      to={`/item/${id}`}
+      className='bg-white p-2 rounded-lg max-w-xs w-auto inline-block shadow cursor-pointer'
       key={id}
     >
       <div className='flex justify-center	w-auto'>

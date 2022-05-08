@@ -20,7 +20,7 @@ const ItemList = ({ products }) => {
         </>
       ) : (
         <>
-          <p>Cargando productos...</p>
+          <p className='text-2xl'>Cargando productos...</p>
         </>
       )}
     </div>

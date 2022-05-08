@@ -2,6 +2,10 @@ const dataProducts = [
   {
     id: 1,
     name: "Camiseta de Perú",
+    category: {
+      id: 1,
+      name: "CONMEBOL",
+    },
     brand: "Marathon",
     color: "white",
     description: "Camiseta edición limitada para el mundial Qatar 2022",
@@ -21,6 +25,10 @@ const dataProducts = [
   {
     id: 2,
     name: "Camiseta de México",
+    category: {
+      id: 2,
+      name: "CONCACAF",
+    },
     brand: "Adidas",
     color: "green-900",
     description: "Camiseta edición limitada para el mundial Qatar 2022",
@@ -40,6 +48,10 @@ const dataProducts = [
   {
     id: 3,
     name: "Camiseta de Argentina",
+    category: {
+      id: 1,
+      name: "CONMEBOL",
+    },
     brand: "Adidas",
     color: "white",
     description: "Camiseta edición limitada para el mundial Qatar 2022",
@@ -59,6 +71,10 @@ const dataProducts = [
   {
     id: 4,
     name: "Camiseta de Chile",
+    category: {
+      id: 1,
+      name: "CONMEBOL",
+    },
     brand: "Adidas",
     color: "red-700",
     description: "Camiseta edición limitada para las Eliminatorias Qatar 2022",
@@ -77,6 +93,10 @@ const dataProducts = [
   {
     id: 5,
     name: "Camiseta de Colombia",
+    category: {
+      id: 1,
+      name: "CONMEBOL",
+    },
     brand: "Adidas",
     color: "yellow-400",
     description: "Camiseta edición limitada para el mundial Qatar 2022",
@@ -96,6 +116,10 @@ const dataProducts = [
   {
     id: 6,
     name: "Camiseta de Uruguay",
+    category: {
+      id: 1,
+      name: "CONMEBOL",
+    },
     brand: "Puma",
     color: "sky-400",
     description: "Camiseta edición limitada para el mundial Qatar 2022",
@@ -115,6 +139,10 @@ const dataProducts = [
   {
     id: 7,
     name: "Camiseta de Brasil",
+    category: {
+      id: 1,
+      name: "CONMEBOL",
+    },
     brand: "Nike",
     color: "yellow-400",
     description: "Camiseta edición limitada para el mundial Qatar 2022",
@@ -134,6 +162,10 @@ const dataProducts = [
   {
     id: 8,
     name: "Camiseta de Paraguay",
+    category: {
+      id: 1,
+      name: "CONMEBOL",
+    },
     brand: "Adidas",
     color: "white",
     description: "Camiseta edición limitada para el mundial Qatar 2022",
@@ -149,6 +181,52 @@ const dataProducts = [
     ],
     thumbnail:
       "https://todosobrecamisetas.com/wp-content/uploads/camiseta-paraguay-adidas-2018-1.jpg",
+  },
+  {
+    id: 9,
+    name: "Camiseta de Canadá",
+    category: {
+      id: 2,
+      name: "CONCACAF",
+    },
+    brand: "Nike",
+    color: "red-900",
+    description: "Camiseta edición limitada para el mundial Qatar 2022",
+    price: 209.99,
+    rating: 5,
+    reviews: [
+      {
+        id: 1,
+        username: "Javier Vargas",
+        text: "Me pareció un buen producto, me pareció genial y no tardó nada",
+        rating: 5,
+      },
+    ],
+    thumbnail:
+      "https://todosobrecamisetas.com/wp-content/uploads/canada-2020-nike-kits-2.jpg",
+  },
+  {
+    id: 10,
+    name: "Camiseta de USA",
+    category: {
+      id: 2,
+      name: "CONCACAF",
+    },
+    brand: "Nike",
+    color: "white",
+    description: "Camiseta edición limitada para el mundial Qatar 2022",
+    price: 209.99,
+    rating: 5,
+    reviews: [
+      {
+        id: 1,
+        username: "Javier Vargas",
+        text: "Me pareció un buen producto, me pareció genial y no tardó nada",
+        rating: 5,
+      },
+    ],
+    thumbnail:
+      "https://i.pinimg.com/originals/a3/f5/64/a3f56471ddedaae1339395a8d7baeab7.jpg",
   },
 ];
 

@@ -1,3 +1,23 @@
+# Mi Catálogo hecho en React
+
+Este proyecto consiste en la muestra de un catálogo mostrando una serie de productos para comprar.
+
+## ¿Qué ideas o enfoque escogí para el mismo?
+
+Mis productos se basaron en las camisetas de fútbol de la mayoría de países de América, esto se debe a que en mi país vivimos los partidos de forma muy efusiva, en las Eliminatorias de Rusia 2018, Perú clasificó a un Mundial después de 36 años, y ese día fue tanta la alegría que cuando se marcaron los goles se sintió un pequeño sismo en la capital debido a los saltos de todos los peruanos.
+
+Y hoy, clasificamos nuevamente al repechaje, razón por la cual nos sentimos muy orgullosos. Y qué mejor motivo, para tomar en cuenta a una de las eliminatorias más difíciles del mundo en mi proyecto. Además, aparte de la CONMEBOL, tomé en cuenta a la CONCACAF, que también tienen muy buenos jugadores.
+
+Por último, el logo que usó en el Navbar es un logo creado por mí, que representa a Descompilados, mi pequeño canal de Youtube del cual subo videos acerca de programación y desarrollo.
+
+## Dependencias extras
+
+No usé dependencias extras en esta oportunidad.
+
+## Decisiones
+
+Hasta el momento, el curso está siendo muy bueno y me atrae la dificultad del mismo. Si bien, mi proyecto no tiene mucha lógica hasta ahora, he intentado mantener las buenas prácticas y organización en él. Apoyarme de DaisyUI y Tailwind fue una muy buena opción, ya que usé de ambos y distintos componentes y su uso es muy sencillo para lograr grandes resultados. Para los datos, prefería mantenerlo de manera local ya que me siento más cómodo hacerlo de esa forma. Las funciones más importantes, las guardé dentro de un archivo nuevo de manera externa tal como nos recomendaron en el after class. Los tiempos de las promesas, decidí colocarlas en 1 segundo, y mientras tanto, mostrará un párrafo indicando que se está cargando. Y por último, si bien coloqué las fotos de los productos mediante una URL, preferí almacenar mi logo de manera local.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
