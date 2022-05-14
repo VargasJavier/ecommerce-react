@@ -1,4 +1,5 @@
 import Item from "./Item";
+import Skeleton from "./Skeleton";
 
 const ItemList = ({ products }) => {
   return (
@@ -20,7 +21,12 @@ const ItemList = ({ products }) => {
         </>
       ) : (
         <>
-          <p className='text-2xl'>Cargando productos...</p>
+          <Skeleton />
+          <Skeleton />
+          <Skeleton />
+          <Skeleton />
+          <Skeleton />
+          <Skeleton />
         </>
       )}
     </div>

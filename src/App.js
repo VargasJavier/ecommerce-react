@@ -3,6 +3,7 @@ import "./App.css";
 import ItemDetailContainer from "./components/ItemDetailContainer";
 import ItemListContainer from "./components/ItemListContainer";
 import NavBar from "./components/NavBar";
+import Skeleton from "./components/Skeleton";
 function App() {
   const Saludo = () => {
     return (
