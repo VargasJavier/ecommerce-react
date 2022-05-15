@@ -48,7 +48,7 @@ export const getProductsByCategory = (
       getItemsByCategory
         ? resolve(getItemsByCategory)
         : reject((err) => console.log("Tenemos de error: ", err));
-    }, 1000);
+    }, 50);
   });
 
   getItems

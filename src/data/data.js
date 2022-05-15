@@ -2,6 +2,7 @@ const dataProducts = [
   {
     id: 1,
     name: "Camiseta de Perú",
+    stock: 5,
     category: {
       id: 1,
       name: "CONMEBOL",
@@ -25,6 +26,7 @@ const dataProducts = [
   {
     id: 2,
     name: "Camiseta de México",
+    stock: 5,
     category: {
       id: 2,
       name: "CONCACAF",
@@ -48,6 +50,7 @@ const dataProducts = [
   {
     id: 3,
     name: "Camiseta de Argentina",
+    stock: 5,
     category: {
       id: 1,
       name: "CONMEBOL",
@@ -71,6 +74,7 @@ const dataProducts = [
   {
     id: 4,
     name: "Camiseta de Chile",
+    stock: 5,
     category: {
       id: 1,
       name: "CONMEBOL",
@@ -93,6 +97,7 @@ const dataProducts = [
   {
     id: 5,
     name: "Camiseta de Colombia",
+    stock: 5,
     category: {
       id: 1,
       name: "CONMEBOL",
@@ -116,6 +121,7 @@ const dataProducts = [
   {
     id: 6,
     name: "Camiseta de Uruguay",
+    stock: 5,
     category: {
       id: 1,
       name: "CONMEBOL",
@@ -139,6 +145,7 @@ const dataProducts = [
   {
     id: 7,
     name: "Camiseta de Brasil",
+    stock: 5,
     category: {
       id: 1,
       name: "CONMEBOL",
@@ -162,6 +169,7 @@ const dataProducts = [
   {
     id: 8,
     name: "Camiseta de Paraguay",
+    stock: 5,
     category: {
       id: 1,
       name: "CONMEBOL",
@@ -185,6 +193,7 @@ const dataProducts = [
   {
     id: 9,
     name: "Camiseta de Canadá",
+    stock: 5,
     category: {
       id: 2,
       name: "CONCACAF",
@@ -208,6 +217,7 @@ const dataProducts = [
   {
     id: 10,
     name: "Camiseta de USA",
+    stock: 5,
     category: {
       id: 2,
       name: "CONCACAF",
