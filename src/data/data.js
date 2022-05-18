@@ -20,8 +20,7 @@ const dataProducts = [
         rating: 5,
       },
     ],
-    thumbnail:
-      "https://www.estilos.com.pe/60355-large_default/marathon-camiseta-oficial-peru.jpg",
+    thumbnail: "https://90mas.com/wp-content/uploads/2021/05/Home-11.png",
   },
   {
     id: 2,

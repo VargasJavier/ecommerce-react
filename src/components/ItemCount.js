@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
 
 const ItemCount = ({ stock, onAdd }) => {
@@ -6,7 +6,7 @@ const ItemCount = ({ stock, onAdd }) => {
   const [finish, setFinish] = useState(false);
 
   const addCount = () => {
-    if (count != stock) setCount((counter) => counter + 1);
+    if (count !== stock) setCount((counter) => counter + 1);
   };
 
   const reduceCount = () => {
@@ -37,9 +37,9 @@ const ItemCount = ({ stock, onAdd }) => {
             stroke='currentColor'
           >
             <path
-              stroke-linecap='round'
-              stroke-linejoin='round'
-              stroke-width='2'
+              strokeLinecap='round'
+              strokeLinejoin='round'
+              strokeWidth='2'
               d='M4 12L20 12'
             />
           </svg>
@@ -59,9 +59,9 @@ const ItemCount = ({ stock, onAdd }) => {
             stroke='currentColor'
           >
             <path
-              stroke-linecap='round'
-              stroke-linejoin='round'
-              stroke-width='2'
+              strokeLinecap='round'
+              strokeLinejoin='round'
+              strokeWidth='2'
               d='M4 12L20 12M12 4l0 16'
             />
           </svg>

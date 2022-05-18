@@ -4,12 +4,12 @@ export const CartContext = createContext([]);
 
 const CartProvider = (props) => {
   const [cart, setCart] = useState([]);
-
+  const [total, setTotal] = useState(0);
   // Métodos recomendados para el carrito
   const addItem = (item, qty) => {
     //Agregar cierta cantidad de un item al carrito
     if (isInCart(item.id)) {
-      let index = cart.findIndex((e) => e.id == item.id);
+      let index = cart.findIndex((e) => e.id === item.id);
       let product = cart[index];
       product.qty = product.qty + qty;
       const newCart = [...cart];
@@ -19,6 +19,19 @@ const CartProvider = (props) => {
       let product = { ...item, qty };
       setCart([...cart, product]);
     }
+  };
+
+  const totalPrice = () => {
+    // Hallar el precio total del carrito
+    return cart.reduce((sum, e) => {
+      return sum + e.price * e.qty;
+    }, 0);
+  };
+
+  const totalProducts = (cart) => {
+    return cart.reduce((qty, e) => {
+      return qty + e.qty;
+    }, 0);
   };
 
   const removeItem = (itemId) => {
@@ -35,12 +48,22 @@ const CartProvider = (props) => {
 
   const isInCart = (id) => {
     // Saber si el item ya está en el carrito
-    return cart.some((e) => e.id == id);
+    return cart.some((e) => e.id === id);
   };
 
   return (
     <>
-      <CartContext.Provider value={{ cart, setCart, addToCart: addItem }}>
+      <CartContext.Provider
+        value={{
+          cart,
+          setCart,
+          total,
+          addToCart: addItem,
+          removeItem: removeItem,
+          totalProducts: totalProducts,
+          totalPrice: totalPrice,
+        }}
+      >
         {props.children}
       </CartContext.Provider>
     </>

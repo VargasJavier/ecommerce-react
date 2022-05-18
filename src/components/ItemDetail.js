@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { CartContext } from "../context/CartContext";
 import ItemCount from "./ItemCount";
@@ -38,9 +38,9 @@ const ItemDetail = ({ item }) => {
                     <svg
                       fill={rating > 0 ? "currentColor" : "none"}
                       stroke='currentColor'
-                      stroke-linecap='round'
-                      stroke-linejoin='round'
-                      stroke-width='2'
+                      strokeLinecap='round'
+                      strokeLinejoin='round'
+                      strokeWidth='2'
                       className='w-4 h-4 text-indigo-500'
                       viewBox='0 0 24 24'
                     >
@@ -49,9 +49,9 @@ const ItemDetail = ({ item }) => {
                     <svg
                       fill={rating > 1 ? "currentColor" : "none"}
                       stroke='currentColor'
-                      stroke-linecap='round'
-                      stroke-linejoin='round'
-                      stroke-width='2'
+                      strokeLinecap='round'
+                      strokeLinejoin='round'
+                      strokeWidth='2'
                       className='w-4 h-4 text-indigo-500'
                       viewBox='0 0 24 24'
                     >
@@ -60,9 +60,9 @@ const ItemDetail = ({ item }) => {
                     <svg
                       fill={rating > 2 ? "currentColor" : "none"}
                       stroke='currentColor'
-                      stroke-linecap='round'
-                      stroke-linejoin='round'
-                      stroke-width='2'
+                      strokeLinecap='round'
+                      strokeLinejoin='round'
+                      strokeWidth='2'
                       className='w-4 h-4 text-indigo-500'
                       viewBox='0 0 24 24'
                     >
@@ -71,20 +71,20 @@ const ItemDetail = ({ item }) => {
                     <svg
                       fill={rating > 3 ? "currentColor" : "none"}
                       stroke='currentColor'
-                      stroke-linecap='round'
-                      stroke-linejoin='round'
-                      stroke-width='2'
+                      strokeLinecap='round'
+                      strokeLinejoin='round'
+                      strokeWidth='2'
                       className='w-4 h-4 text-indigo-500'
                       viewBox='0 0 24 24'
                     >
                       <path d='M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z'></path>
                     </svg>
                     <svg
-                      fill={rating == 5 ? "currentColor" : "none"}
+                      fill={rating === 5 ? "currentColor" : "none"}
                       stroke='currentColor'
-                      stroke-linecap='round'
-                      stroke-linejoin='round'
-                      stroke-width='2'
+                      strokeLinecap='round'
+                      strokeLinejoin='round'
+                      strokeWidth='2'
                       className='w-4 h-4 text-indigo-500'
                       viewBox='0 0 24 24'
                     >
@@ -96,9 +96,9 @@ const ItemDetail = ({ item }) => {
                     <a className='text-gray-500'>
                       <svg
                         fill='currentColor'
-                        stroke-linecap='round'
-                        stroke-linejoin='round'
-                        stroke-width='2'
+                        strokeLinecap='round'
+                        strokeLinejoin='round'
+                        strokeWidth='2'
                         className='w-5 h-5'
                         viewBox='0 0 24 24'
                       >
@@ -108,9 +108,9 @@ const ItemDetail = ({ item }) => {
                     <a className='text-gray-500'>
                       <svg
                         fill='currentColor'
-                        stroke-linecap='round'
-                        stroke-linejoin='round'
-                        stroke-width='2'
+                        strokeLinecap='round'
+                        strokeLinejoin='round'
+                        strokeWidth='2'
                         className='w-5 h-5'
                         viewBox='0 0 24 24'
                       >
@@ -120,9 +120,9 @@ const ItemDetail = ({ item }) => {
                     <a className='text-gray-500'>
                       <svg
                         fill='currentColor'
-                        stroke-linecap='round'
-                        stroke-linejoin='round'
-                        stroke-width='2'
+                        strokeLinecap='round'
+                        strokeLinejoin='round'
+                        strokeWidth='2'
                         className='w-5 h-5'
                         viewBox='0 0 24 24'
                       >
@@ -156,9 +156,9 @@ const ItemDetail = ({ item }) => {
                         <svg
                           fill='none'
                           stroke='currentColor'
-                          stroke-linecap='round'
-                          stroke-linejoin='round'
-                          stroke-width='2'
+                          strokeLinecap='round'
+                          strokeLinejoin='round'
+                          strokeWidth='2'
                           className='w-4 h-4'
                           viewBox='0 0 24 24'
                         >
@@ -170,7 +170,7 @@ const ItemDetail = ({ item }) => {
                 </div>
                 <div className='flex'>
                   <span className='flex items-center title-font font-medium text-2xl text-gray-900'>
-                    {`\$${price}`}
+                    {`$${price}`}
                   </span>
                   <ItemCount stock={stock} onAdd={onAdd} />
                 </div>

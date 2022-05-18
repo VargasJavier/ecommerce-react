@@ -5,7 +5,6 @@ const Item = ({ id, name, description, price, thumbnail }) => {
     <Link
       to={`/item/${id}`}
       className='bg-white p-2 rounded-lg max-w-xs w-auto inline-block shadow cursor-pointer hover:animate-spin-slow'
-      key={id}
     >
       <div className='flex justify-center	w-auto'>
         <img className='h-64' src={thumbnail} alt='Miniatura del producto' />

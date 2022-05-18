@@ -8,7 +8,11 @@ const NavBar = () => {
       {/* Logo y componente CartWidget */}
       <div className='navbar bg-base-100 justify-between'>
         <Link to='/' className=''>
-          <img className='btn btn-ghost normal-case' src={logoNew} />
+          <img
+            className='btn btn-ghost normal-case'
+            alt='Logo de la página'
+            src={logoNew}
+          />
         </Link>
         {/* AGREGAMOS PARA EL PROYECTO */}
         <div>
@@ -25,9 +29,12 @@ const NavBar = () => {
         <div className='flex-none'>
           <CartWidget />
           <div className='dropdown dropdown-end'>
-            <label tabindex='0' className='btn btn-ghost btn-circle avatar'>
+            <label tabIndex='0' className='btn btn-ghost btn-circle avatar'>
               <div className='w-10 rounded-full'>
-                <img src='https://api.lorem.space/image/face?hash=33791' />
+                <img
+                  src='https://api.lorem.space/image/face?hash=33791'
+                  alt='Foto de perfil'
+                />
               </div>
             </label>
           </div>
