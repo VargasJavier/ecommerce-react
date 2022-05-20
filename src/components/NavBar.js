@@ -17,10 +17,10 @@ const NavBar = () => {
         {/* AGREGAMOS PARA EL PROYECTO */}
         <div>
           <ul className='flex'>
-            <Link to='/category/1' className='m-4'>
+            <Link to='/category/conmebol' className='m-4'>
               CONMEBOL
             </Link>
-            <Link to='/category/2' className='m-4'>
+            <Link to='/category/concacaf' className='m-4'>
               CONCACAF
             </Link>
           </ul>

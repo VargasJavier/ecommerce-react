@@ -37,9 +37,19 @@ const ItemCartList = ({
             </div>
           ) : (
             <div className='h-96 flex justify-center items-center'>
-              <Link to='/' className='btn btn-primary'>
+              <button
+                onClick={() => {
+                  const countItems = `${totalProducts(items)} ${
+                    totalProducts(items) > 1 ? "productos" : "producto"
+                  }`;
+                  alert(
+                    `Tienes ${countItems} y debes pagar s/ ${totalPrice()}`
+                  );
+                }}
+                className='btn btn-primary'
+              >
                 Comprar
-              </Link>
+              </button>
             </div>
           )}
         </>

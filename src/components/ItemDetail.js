@@ -6,7 +6,12 @@ import ItemCount from "./ItemCount";
 const ItemDetail = ({ item }) => {
   const cartContext = useContext(CartContext);
   const { addToCart } = cartContext;
-  const { name, brand, rating, description, price, thumbnail, stock } = item;
+  const { name, brand, rating, description, price, thumbnail, stock, color } =
+    item;
+
+  const styleColor = `border-2 border-gray-300 ml-1 rounded-full w-6 h-6 focus:outline-none bg-${color}`;
+  const styleUncolor =
+    "border-2 border-gray-300 ml-1 rounded-full w-6 h-6 focus:outline-none bg-gray";
 
   const onAdd = (qty) => {
     addToCart(item, qty);
@@ -132,15 +137,13 @@ const ItemDetail = ({ item }) => {
                   </span>
                 </div>
                 <p className='leading-relaxed'>{description}</p>
-                <p className='text-xs font-bold text-indigo-700 uppercase'>{`¡Solo quedan ${stock} unidades!`}</p>
+                <p className='text-xs font-bold text-indigo-700 pt-2 uppercase'>{`¡Solo quedan ${stock} unidades!`}</p>
                 <div className='flex mt-6 items-center pb-5 border-b-2 border-gray-100 mb-5'>
                   <div className='flex'>
                     <span className='mr-3'>Color</span>
                     <button
                       id='buttonColor'
-                      className={
-                        "border-2 border-gray-300 ml-1 rounded-full w-6 h-6 focus:outline-none bg-gray"
-                      }
+                      className={color ? styleColor : styleUncolor}
                     ></button>
                   </div>
                   <div className='flex ml-6 items-center'>

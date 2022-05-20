@@ -2,17 +2,36 @@ import { useEffect, useState } from "react";
 import ItemList from "./ItemList";
 import dataProducts from "../data/data";
 import { useParams } from "react-router-dom";
-import { getProducts, getProductsByCategory } from "../helpers/getItems";
+import {
+  getProductsByCategoryFirebase,
+  getProductsFirebase,
+} from "../helpers/getItems";
+import {
+  collection,
+  getDocs,
+  getFirestore,
+  query,
+  where,
+} from "firebase/firestore";
 
 const ItemListContainer = () => {
   const [products, setProducts] = useState([]);
-  const { categoryId } = useParams();
+  const { categoryName } = useParams();
 
   useEffect(() => {
-    categoryId
-      ? getProductsByCategory(dataProducts, setProducts, categoryId)
-      : getProducts(dataProducts, setProducts);
-  }, [categoryId]);
+    const db = getFirestore();
+    categoryName
+      ? getProductsByCategoryFirebase(
+          db,
+          setProducts,
+          categoryName,
+          collection,
+          getDocs,
+          query,
+          where
+        )
+      : getProductsFirebase(db, setProducts, collection, getDocs);
+  }, [categoryName]);
 
   return (
     <>

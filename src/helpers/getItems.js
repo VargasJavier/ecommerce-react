@@ -16,6 +16,14 @@ export const getProducts = (dataProducts, setProducts) => {
     });
 };
 
+export const getProductsFirebase = (db, setProducts, collection, getDocs) => {
+  const itemsCollection = collection(db, "items");
+  getDocs(itemsCollection).then((snapshop) => {
+    if (snapshop.size === 0) console.log("No results");
+    setProducts(snapshop.docs.map((doc) => ({ id: doc.id, ...doc.data() })));
+  });
+};
+
 export const getProductsByID = (dataProducts, setItem, productId) => {
   const getItemDetail = new Promise((resolve, reject) => {
     setTimeout(() => {
@@ -33,6 +41,20 @@ export const getProductsByID = (dataProducts, setItem, productId) => {
     .catch((err) => {
       console.log("Hubo un error al traer el item", err);
     });
+};
+
+export const getProductsByIDFirebase = (
+  db,
+  setItem,
+  productId,
+  doc,
+  getDoc
+) => {
+  const itemRef = doc(db, "items", productId);
+  getDoc(itemRef).then((snapshop) => {
+    if (!snapshop.exists()) console.log("No result");
+    else setItem({ id: snapshop.id, ...snapshop.data() });
+  });
 };
 
 export const getProductsByCategory = (
@@ -58,4 +80,24 @@ export const getProductsByCategory = (
     .catch((err) => {
       console.log("Hubo un error al traer la categoría", err);
     });
+};
+
+export const getProductsByCategoryFirebase = (
+  db,
+  setItemsByCategory,
+  categoryID,
+  collection,
+  getDocs,
+  query,
+  where
+) => {
+  const category = categoryID.toUpperCase();
+  const q = query(collection(db, "items"), where("category", "==", category));
+
+  getDocs(q).then((snapshop) => {
+    if (snapshop.size === 0) console.log("No results");
+    setItemsByCategory(
+      snapshop.docs.map((doc) => ({ id: doc.id, ...doc.data() }))
+    );
+  });
 };
