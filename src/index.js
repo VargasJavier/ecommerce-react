@@ -6,12 +6,12 @@ import { createRoot } from "react-dom/client";
 import { initializeApp } from "firebase/app";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyDDzPvxJ-l5PiTv5An7Ka8KXQHaGMqY7G0",
-  authDomain: "react-proyecto-bbd40.firebaseapp.com",
-  projectId: "react-proyecto-bbd40",
-  storageBucket: "react-proyecto-bbd40.appspot.com",
-  messagingSenderId: "860165402657",
-  appId: "1:860165402657:web:abd8f8717e4087072eb360",
+  apiKey: process.env.REACT_APP_KEY,
+  authDomain: process.env.REACT_APP_AUTH_DOMAIN,
+  projectId: process.env.REACT_APP_PROJECTID,
+  storageBucket: process.env.REACT_APP_STORAGE_BUCKET,
+  messagingSenderId: process.env.REACT_APP_MESSAGING_SENDERID,
+  appId: process.env.REACT_APP_APPID,
 };
 
 // Initialize Firebase
