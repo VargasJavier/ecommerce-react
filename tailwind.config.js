@@ -2,7 +2,10 @@ module.exports = {
   content: ["./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
     screens: {
+      mobile: "400px",
       tablet: "735px",
+      laptop: "1024px",
+      desktop: "1280px",
     },
     extend: {
       colors: {
@@ -10,7 +13,7 @@ module.exports = {
       },
       gridTemplateColumns: {
         // Simple 16 column grid
-        16: "repeat(auto-fit, minmax(17.5rem, 1fr))",
+        16: "repeat(auto-fit, minmax(19rem, 1fr))",
       },
       animation: {
         // Animation with hover
@@ -24,5 +27,5 @@ module.exports = {
       },
     },
   },
-  plugins: [require("daisyui")],
+  plugins: [require("daisyui"), require("tailwind-scrollbar-hide")],
 };

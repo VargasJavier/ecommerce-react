@@ -1,10 +1,10 @@
 import { Link } from "react-router-dom";
 
-const Item = ({ id, name, description, price, thumbnail }) => {
+const Item = ({ id, name, price, thumbnail }) => {
   return (
     <Link
       to={`/item/${id}`}
-      className='bg-white p-2 rounded-lg w-[19rem] inline-block shadow cursor-pointer hover:animate-spin-slow'
+      className='bg-white m-2 p-2 rounded-lg w-[19rem] inline-block shadow cursor-pointer hover:animate-spin-slow'
     >
       <div className='flex justify-center	w-auto'>
         <img className='h-64' src={thumbnail} alt='Miniatura del producto' />

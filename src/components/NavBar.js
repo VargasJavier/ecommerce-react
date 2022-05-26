@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 const NavBar = () => {
   return (
     <>
-      {/* Logo y componente CartWidget */}
+      {/* Brand */}
       <div className='navbar bg-base-100 justify-between'>
         <Link to='/' className=''>
           <img
@@ -13,32 +13,10 @@ const NavBar = () => {
             alt='Logo de la página'
             src={logoNew}
           />
+          <span>Onara</span>
         </Link>
-        {/* AGREGAMOS PARA EL PROYECTO */}
-        <div>
-          <ul className='flex'>
-            <Link to='/category/conmebol' className='m-4'>
-              CONMEBOL
-            </Link>
-            <Link to='/category/concacaf' className='m-4'>
-              CONCACAF
-            </Link>
-          </ul>
-        </div>
-        {/* TERMINA LO AGREGADO */}
-        <div className='flex-none'>
-          <CartWidget />
-          <div className='dropdown dropdown-end'>
-            <label tabIndex='0' className='btn btn-ghost btn-circle avatar'>
-              <div className='w-10 rounded-full'>
-                <img
-                  src='https://api.lorem.space/image/face?hash=33791'
-                  alt='Foto de perfil'
-                />
-              </div>
-            </label>
-          </div>
-        </div>
+        {/* Cart */}
+        <CartWidget />
       </div>
     </>
   );
