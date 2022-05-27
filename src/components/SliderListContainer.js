@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import SliderList from "./SliderList";
 import { collection, getDocs, getFirestore } from "firebase/firestore";
 import { getCategoryFirebase } from "../helpers/getItems";
-import { useParams } from "react-router-dom";
 
 const SliderListContainer = ({ categoryName }) => {
   const [categories, setCategories] = useState([]);

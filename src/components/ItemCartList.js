@@ -2,13 +2,7 @@ import { Link } from "react-router-dom";
 import ItemCart from "./ItemCart";
 import { AiOutlineShoppingCart as CartIcon } from "react-icons/ai";
 
-const ItemCartList = ({
-  items,
-  removeItem,
-  totalProducts,
-  totalPrice,
-  isWidget = true,
-}) => {
+const ItemCartList = ({ items, removeItem, totalProducts, totalPrice }) => {
   return (
     <div className='mt-4'>
       {items.length ? (
@@ -50,30 +44,26 @@ const ItemCartList = ({
               </div>
             </div>
             <div className='flex justify-center items-center mx-4 py-8'>
-              <button
-                onClick={() => {
-                  const countItems = `${totalProducts(items)} ${
-                    totalProducts(items) > 1 ? "productos" : "producto"
-                  }`;
-                  alert(
-                    `Tienes ${countItems} y debes pagar s/ ${totalPrice()}`
-                  );
-                }}
+              <Link
+                to='/checkout'
                 className='btn btn-primary bg-secondary border-secondary w-full px-4  mobile:w-4/5 tablet:w-2/3 laptop:w-2/5 desktop:w-1/4 hover:bg-secondary-hover hover:border-none'
               >
                 Checkout
-              </button>
+              </Link>
             </div>
           </section>
         </>
       ) : (
         <>
           <div className={`flex flex-col justify-center items-center w-64 p-4`}>
-            <p>Tu carrito está vacío</p>
+            <p>Your cart is empty</p>
             <CartIcon className='h-16 w-16 m-2' />
             <div className='card-actions pt-2'>
-              <Link to='/' className='btn btn-primary'>
-                Volver al home
+              <Link
+                to='/'
+                className='btn btn-primary bg-secondary border-secondary w-full px-4  mobile:w-4/5 tablet:w-2/3 laptop:w-2/5 desktop:w-1/4 hover:bg-secondary-hover hover:border-none'
+              >
+                Back to home
               </Link>
             </div>
           </div>
