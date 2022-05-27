@@ -3,7 +3,7 @@ import Skeleton from "./Skeleton";
 
 const ItemList = ({ products }) => {
   return (
-    <div className='grid gap-4 tablet:gap-12 mx-4 grid-cols-16 justify-items-center pb-8'>
+    <div className='grid gap-4 tablet:gap-12 mx-4 mt-8 grid-cols-16 justify-items-center pb-8'>
       {products.length ? (
         <>
           {products.map((product, i) => {
@@ -21,6 +21,10 @@ const ItemList = ({ products }) => {
         </>
       ) : (
         <>
+          <Skeleton />
+          <Skeleton />
+          <Skeleton />
+          <Skeleton />
           <Skeleton />
           <Skeleton />
           <Skeleton />

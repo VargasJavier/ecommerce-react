@@ -5,22 +5,28 @@ const ItemCart = ({ item, removeItem }) => {
   return (
     <Link
       to={`/item/${item.id}`}
-      className='flex justify-between rounded p-2 my-2 items-center w-72 bg-white'
+      className='flex justify-between rounded p-2 my-2 items-center w-full mobile:w-4/5 mobile:p-0 tablet:w-2/3 laptop:w-2/5 desktop:w-1/4'
     >
       <section className='flex items-center'>
-        <div>
+        <div className='rounded'>
           <img
-            className='h-12 rounded-full'
+            className='h-full max-h-16 tablet:max-h-24 rounded-full'
             src={item.thumbnail}
             alt='Miniatura de Item'
           />
         </div>
         <section className='ml-2'>
-          <h3 className='font-bold text-slate-500'>{item.name}</h3>
+          <h3 className='font-bold text-title'>{item.name}</h3>
+          <p className='text-title'>{item.price}</p>
           <p>{`Cantidad: ${item.qty}`}</p>
         </section>
       </section>
-      <button onClick={() => removeItem(item.id)}>
+      <button
+        onClick={(e) => {
+          e.preventDefault();
+          removeItem(item.id);
+        }}
+      >
         <IconDelete className='w-6 h-6 fill-slate-600' />
       </button>
     </Link>

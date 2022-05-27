@@ -35,9 +35,6 @@ const ItemListContainer = () => {
   return (
     <>
       <SliderListContainer categoryName={categoryName} />
-      <h1 className='text-5xl text-center text-gray-700 p-8'>
-        Camisetas a la venta
-      </h1>
       <ItemList products={products} />
     </>
   );

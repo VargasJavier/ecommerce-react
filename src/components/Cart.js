@@ -14,7 +14,6 @@ const Cart = () => {
         total={total}
         totalProducts={totalProducts}
         totalPrice={totalPrice}
-        isWidget={false}
       />
     </>
   );

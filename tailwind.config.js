@@ -10,6 +10,9 @@ module.exports = {
     extend: {
       colors: {
         "primary-color": "#2a303c",
+        title: "#040415",
+        secondary: "#ff8900",
+        "secondary-hover": "#bf6700",
       },
       gridTemplateColumns: {
         // Simple 16 column grid

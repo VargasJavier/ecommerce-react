@@ -17,14 +17,14 @@ const ItemCount = ({ stock, onAdd }) => {
     <>
       <Link
         to='/cart'
-        className='flex items-center ml-8 text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded'
+        className='text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded'
       >
         Terminar la compra
       </Link>
     </>
   ) : (
     <>
-      <div className='flex ml-auto'>
+      <div className='flex ml-auto items-center'>
         <button
           onClick={reduceCount}
           className='btn btn-square btn-outline hover:bg-indigo-500 hover:text-white'
@@ -77,7 +77,7 @@ const ItemCount = ({ stock, onAdd }) => {
         }}
         className='flex items-center ml-8 text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded'
       >
-        Añadir al carrito
+        Add to cart
       </button>
     </>
   );

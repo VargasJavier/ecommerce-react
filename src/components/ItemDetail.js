@@ -2,6 +2,7 @@ import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { CartContext } from "../context/CartContext";
 import ItemCount from "./ItemCount";
+import { FaArrowLeft as IconLeft } from "react-icons/fa";
 
 const ItemDetail = ({ item }) => {
   const cartContext = useContext(CartContext);
@@ -19,8 +20,8 @@ const ItemDetail = ({ item }) => {
 
   return (
     <section className='bg-white text-gray-600 body-font overflow-hidden'>
-      <Link to='/' className='m-4 text-xl btn text-white'>
-        Regresar
+      <Link to='/' className='m-4 text-xl btn bg-white hover:bg-title'>
+        <IconLeft className='text-title hover:text-white' />
       </Link>
       {item ? (
         <>
@@ -138,7 +139,7 @@ const ItemDetail = ({ item }) => {
                 </div>
                 <p className='leading-relaxed'>{description}</p>
                 <p className='text-xs font-bold text-indigo-700 pt-2 uppercase'>{`¡Solo quedan ${stock} unidades!`}</p>
-                <div className='flex mt-6 items-center pb-5 border-b-2 border-gray-100 mb-5'>
+                <div className='flex mt-6 items-center'>
                   <div className='flex'>
                     <span className='mr-3'>Color</span>
                     <button
@@ -150,7 +151,7 @@ const ItemDetail = ({ item }) => {
                     <span className='mr-3'>Size</span>
                     <div className='relative'>
                       <select className='rounded border appearance-none border-gray-300 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-200 focus:border-indigo-500 text-base pl-3 pr-10'>
-                        <option>SM</option>
+                        <option>S</option>
                         <option>M</option>
                         <option>L</option>
                         <option>XL</option>
@@ -171,10 +172,10 @@ const ItemDetail = ({ item }) => {
                     </div>
                   </div>
                 </div>
+                <span className='block text-left title-font font-medium text-2xl text-gray-900 pb-5 border-b-2 border-gray-100 mb-5 mt-3'>
+                  {`$${price}`}
+                </span>
                 <div className='flex'>
-                  <span className='flex items-center title-font font-medium text-2xl text-gray-900'>
-                    {`$${price}`}
-                  </span>
                   <ItemCount stock={stock} onAdd={onAdd} />
                 </div>
               </div>
