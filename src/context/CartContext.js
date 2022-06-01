@@ -5,6 +5,7 @@ export const CartContext = createContext([]);
 const CartProvider = (props) => {
   const [cart, setCart] = useState([]);
   const [total, setTotal] = useState(0);
+  const [checkout, setCheckout] = useState({});
   // Métodos recomendados para el carrito
   const addItem = (item, qty) => {
     //Agregar cierta cantidad de un item al carrito
@@ -51,6 +52,10 @@ const CartProvider = (props) => {
     return cart.some((e) => e.id === id);
   };
 
+  const addCheckout = (docData) => {
+    setCheckout(docData);
+  };
+
   return (
     <>
       <CartContext.Provider
@@ -58,10 +63,12 @@ const CartProvider = (props) => {
           cart,
           setCart,
           total,
+          checkout,
           addToCart: addItem,
           removeItem: removeItem,
           totalProducts: totalProducts,
           totalPrice: totalPrice,
+          addCheckout: addCheckout,
         }}
       >
         {props.children}

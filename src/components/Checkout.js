@@ -1,8 +1,17 @@
 import { Link } from "react-router-dom";
 import { FaArrowLeft as IconLeft } from "react-icons/fa";
+import { setOrderFinished } from "../helpers/getItems";
 
-const Checkout = ({ totalPrice }) => {
-  console.log();
+const Checkout = ({
+  totalPrice,
+  db,
+  addDoc,
+  collection,
+  totalProducts,
+  addCheckout,
+  cart,
+}) => {
+  let priceTotal = totalPrice() + 5;
   return (
     <>
       <Link to='/cart' className='p-0'>
@@ -14,7 +23,7 @@ const Checkout = ({ totalPrice }) => {
       <section className='flex flex-col items-center laptop:flex-row laptop:mx-8 laptop:space-x-4 desktop:w-2/3 justify-center'>
         <main className='px-2 mb-8 w-full'>
           <h2 className='text-lg text-title'>Detalles de facturación</h2>
-          <form id='formulario' className='flex flex-col'>
+          <form className='flex flex-col'>
             <label
               className='font-thin text-sm text-title mt-2'
               htmlFor='email'
@@ -23,7 +32,7 @@ const Checkout = ({ totalPrice }) => {
             </label>
             <input
               className='input input-bordered focus:outline-secondary bg-white'
-              id='email'
+              id='name'
               type='text'
               placeholder='Javier Alejandro'
             />
@@ -35,7 +44,7 @@ const Checkout = ({ totalPrice }) => {
             </label>
             <input
               className='input input-bordered focus:outline-secondary bg-white'
-              id='email'
+              id='lastName'
               type='text'
               placeholder='Vargas Mexico'
             />
@@ -55,11 +64,11 @@ const Checkout = ({ totalPrice }) => {
               className='font-thin text-sm text-title mt-2'
               htmlFor='email'
             >
-              Adress
+              Address
             </label>
             <input
               className='input input-bordered focus:outline-secondary bg-white'
-              id='email'
+              id='address'
               type='text'
               placeholder='Av. Universitaria #3455'
             />
@@ -79,23 +88,45 @@ const Checkout = ({ totalPrice }) => {
               <hr className='w-full px-4' />
               <div className='flex justify-between items-center w-full px-4'>
                 <span>Total:</span>
-                <span className='text-secondary font-bold text-lg my-2'>{`$${
-                  totalPrice() + 5
-                }`}</span>
+                <span className='text-secondary font-bold text-lg my-2'>{`$${priceTotal}`}</span>
               </div>
             </div>
           </section>
-          <button
-            form='formulario'
-            type='submit'
-            onClick={(e) => {
-              e.preventDefault();
-              alert("Buenas, gracias por su compra!");
+          <Link
+            to='/purchasing'
+            onClick={async (e) => {
+              const name = document.getElementById("name").value;
+              const lastName = document.getElementById("lastName").value;
+              const email = document.getElementById("email").value;
+              const address = document.getElementById("address").value;
+              const totalProductos = totalProducts(cart);
+              if (
+                name.length > 0 &&
+                lastName.length > 0 &&
+                email.length > 0 &&
+                address.length > 0
+              )
+                await setOrderFinished(
+                  db,
+                  addDoc,
+                  collection,
+                  name,
+                  lastName,
+                  email,
+                  address,
+                  priceTotal,
+                  totalProductos,
+                  addCheckout
+                );
+              else {
+                alert("Recuerda llenar todos los campos");
+                e.preventDefault();
+              }
             }}
             className='bg-secondary border-secondary text-white w-full px-4 hover:bg-secondary-hover hover:border-none mt-4 py-2 btn rounded-md font-bold'
           >
-            Pay ${totalPrice() + 5}
-          </button>
+            Pay ${priceTotal}
+          </Link>
         </aside>
       </section>
     </>

@@ -1,17 +1,21 @@
+import { addDoc, collection, getFirestore } from "firebase/firestore";
 import { useContext } from "react";
 import { CartContext } from "../context/CartContext";
 import Checkout from "./Checkout";
 
 const CheckoutContainer = () => {
   const cartContext = useContext(CartContext);
-  const { cart, removeItem, total, totalProducts, totalPrice } = cartContext;
+  const { totalPrice, totalProducts, addCheckout, cart } = cartContext;
+  const db = getFirestore();
   return (
     <Checkout
-      items={cart}
-      removeItem={removeItem}
-      total={total}
-      totalProducts={totalProducts}
       totalPrice={totalPrice}
+      db={db}
+      addDoc={addDoc}
+      collection={collection}
+      totalProducts={totalProducts}
+      addCheckout={addCheckout}
+      cart={cart}
     />
   );
 };
