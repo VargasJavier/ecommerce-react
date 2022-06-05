@@ -24,10 +24,7 @@ const Checkout = ({
         <main className='px-2 mb-8 w-full'>
           <h2 className='text-lg text-title'>Detalles de facturación</h2>
           <form className='flex flex-col'>
-            <label
-              className='font-thin text-sm text-title mt-2'
-              htmlFor='email'
-            >
+            <label className='font-thin text-sm text-title mt-2' htmlFor='name'>
               Name
             </label>
             <input
@@ -38,7 +35,7 @@ const Checkout = ({
             />
             <label
               className='font-thin text-sm text-title mt-2'
-              htmlFor='email'
+              htmlFor='lastName'
             >
               Last name
             </label>
@@ -62,7 +59,19 @@ const Checkout = ({
             />
             <label
               className='font-thin text-sm text-title mt-2'
-              htmlFor='email'
+              htmlFor='emailConfirm'
+            >
+              Confirm e-mail
+            </label>
+            <input
+              className='input input-bordered focus:outline-secondary bg-white'
+              id='emailConfirm'
+              type='email'
+              placeholder='@'
+            />
+            <label
+              className='font-thin text-sm text-title mt-2'
+              htmlFor='address'
             >
               Address
             </label>
@@ -98,6 +107,7 @@ const Checkout = ({
               const name = document.getElementById("name").value;
               const lastName = document.getElementById("lastName").value;
               const email = document.getElementById("email").value;
+              const email2 = document.getElementById("emailConfirm").value;
               const address = document.getElementById("address").value;
               const totalProductos = totalProducts(cart);
               const emailRegex =
@@ -110,18 +120,23 @@ const Checkout = ({
               ) {
                 //Se muestra un texto a modo de ejemplo, luego va a ser un icono
                 if (emailRegex.test(email)) {
-                  await setOrderFinished(
-                    db,
-                    addDoc,
-                    collection,
-                    name,
-                    lastName,
-                    email,
-                    address,
-                    priceTotal,
-                    totalProductos,
-                    addCheckout
-                  );
+                  if (email === email2)
+                    await setOrderFinished(
+                      db,
+                      addDoc,
+                      collection,
+                      name,
+                      lastName,
+                      email,
+                      address,
+                      priceTotal,
+                      totalProductos,
+                      addCheckout
+                    );
+                  else {
+                    alert("Los correos electrónicos no coinciden");
+                    e.preventDefault();
+                  }
                 } else {
                   alert("Debe ingresar un email válido");
                   e.preventDefault();

@@ -18,13 +18,16 @@ Para las dependencias extras utilicé las siguientes:
 
 Entre las usadas en clase tenemos a:
 
-- **tailwind-scrollbar-hide** -> Complemento Tailwind para ocultar barras de desplazamiento, aunque el elemento aún se puede desplazar si el contenido del elemento se desborda.
 - **daisyui** -> La biblioteca de componentes Tailwind CSS más popular, gratuita y de código abierto
 - **firebase** -> Firebase es una plataforma de desarrollo de aplicaciones que lo ayuda a crear y desarrollar aplicaciones y juegos que les encantan a los usuarios.
 - **react** -> Una biblioteca de JavaScript para construir interfaces de usuario
 - **react-dom** -> El paquete react-dom proporciona métodos específicos del DOM que pueden ser utilizados en el nivel más alto de tu aplicación
-- **react-icons** -> Incluya íconos populares en sus proyectos de React fácilmente con react-icons, que utiliza importaciones de ES6 que le permiten incluir solo los íconos que usa su proyecto.
 - **react-router-dom** -> React Router DOM permite implementar enrutamiento dinámico en una aplicación web
+
+### Escogidas por mí
+
+- **tailwind-scrollbar-hide** -> Complemento Tailwind para ocultar barras de desplazamiento, aunque el elemento aún se puede desplazar si el contenido del elemento se desborda. Consideré incluirlo debido que el diseño que tenía en mente no me terminaba de convencer con el scrollbar visible. Fue más por un tema de estética.
+- **react-icons** -> Incluya íconos populares en sus proyectos de React fácilmente con react-icons, que utiliza importaciones de ES6 que le permiten incluir solo los íconos que usa su proyecto.
 
 ## Decisiones
 

@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { CartContext } from "../context/CartContext";
 import ItemCount from "./ItemCount";
 import { FaArrowLeft as IconLeft } from "react-icons/fa";
+import errorCat from "../assets/svg/errorCat.svg";
 
 const ItemDetail = ({ item }) => {
   const cartContext = useContext(CartContext);
@@ -23,7 +24,7 @@ const ItemDetail = ({ item }) => {
       <Link to='/' className='m-4 text-xl btn bg-white hover:bg-title'>
         <IconLeft className='text-title hover:text-white' />
       </Link>
-      {item ? (
+      {item.id ? (
         <>
           <div className='container px-5 py-24 mx-auto'>
             <div className='lg:w-4/5 mx-auto flex flex-wrap'>
@@ -182,10 +183,21 @@ const ItemDetail = ({ item }) => {
             </div>
           </div>
         </>
+      ) : item === "false" ? (
+        <div className='h-auto flex flex-col justify-center items-center my-16'>
+          <img
+            src={errorCat}
+            alt='Imagen de producto no encontrado'
+            className='h-96'
+          />
+          <p className='text-title text-lg'>Producto no encontrado</p>
+        </div>
       ) : (
-        <>
-          <p>Cargando producto...</p>
-        </>
+        <div className='h-96 flex justify-center'>
+          <div className='bg-white rounded-sm p-4 shadow-sm flex flex-col items-center text-title'>
+            <button className='btn loading'>Cargando producto...</button>
+          </div>
+        </div>
       )}
     </section>
   );

@@ -15,7 +15,7 @@ export const getProductsByIDFirebase = (
 ) => {
   const itemRef = doc(db, "items", productId);
   getDoc(itemRef).then((snapshop) => {
-    if (!snapshop.exists()) console.log("No result");
+    if (!snapshop.exists()) setItem("false");
     else setItem({ id: snapshop.id, ...snapshop.data() });
   });
 };
@@ -33,7 +33,10 @@ export const getProductsByCategoryFirebase = (
   const q = query(collection(db, "items"), where("category", "==", categoryID));
 
   getDocs(q).then((snapshop) => {
-    if (snapshop.size === 0) console.log("No results");
+    if (snapshop.size === 0) {
+      setItemsByCategory("false");
+      return;
+    }
     setItemsByCategory(
       snapshop.docs.map((doc) => ({ id: doc.id, ...doc.data() }))
     );
