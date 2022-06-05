@@ -1,6 +1,6 @@
 # Mi Catálogo hecho en React
 
-Este proyecto consiste en la muestra de un catálogo mostrando una serie de productos para comprar.
+Este proyecto consiste en la muestra de un catálogo mostrando una serie de camisetas de distintos países y equipos para comprar.
 
 ## ¿Qué ideas o enfoque escogí para el mismo?
 
@@ -12,11 +12,23 @@ Por último, el logo que usó en el Navbar es un logo creado por mí, que repres
 
 ## Dependencias extras
 
-No usé dependencias extras en esta oportunidad.
+Para las dependencias extras utilicé las siguientes:
+
+### Usadas en clase
+
+Entre las usadas en clase tenemos a:
+
+- **tailwind-scrollbar-hide** -> Complemento Tailwind para ocultar barras de desplazamiento, aunque el elemento aún se puede desplazar si el contenido del elemento se desborda.
+- **daisyui** -> La biblioteca de componentes Tailwind CSS más popular, gratuita y de código abierto
+- **firebase** -> Firebase es una plataforma de desarrollo de aplicaciones que lo ayuda a crear y desarrollar aplicaciones y juegos que les encantan a los usuarios.
+- **react** -> Una biblioteca de JavaScript para construir interfaces de usuario
+- **react-dom** -> El paquete react-dom proporciona métodos específicos del DOM que pueden ser utilizados en el nivel más alto de tu aplicación
+- **react-icons** -> Incluya íconos populares en sus proyectos de React fácilmente con react-icons, que utiliza importaciones de ES6 que le permiten incluir solo los íconos que usa su proyecto.
+- **react-router-dom** -> React Router DOM permite implementar enrutamiento dinámico en una aplicación web
 
 ## Decisiones
 
-Hasta el momento, el curso está siendo muy bueno y me atrae la dificultad del mismo. Si bien, mi proyecto no tiene mucha lógica hasta ahora, he intentado mantener las buenas prácticas y organización en él. Apoyarme de DaisyUI y Tailwind fue una muy buena opción, ya que usé de ambos y distintos componentes y su uso es muy sencillo para lograr grandes resultados. Para los datos, prefería mantenerlo de manera local ya que me siento más cómodo hacerlo de esa forma. Las funciones más importantes, las guardé dentro de un archivo nuevo de manera externa tal como nos recomendaron en el after class. Los tiempos de las promesas, decidí colocarlas en 1 segundo, y mientras tanto, mostrará un párrafo indicando que se está cargando. Y por último, si bien coloqué las fotos de los productos mediante una URL, preferí almacenar mi logo de manera local.
+Hasta el momento, el curso está siendo muy bueno y me atrae la dificultad del mismo. He intentado mantener las buenas prácticas y organización en él. Apoyarme de DaisyUI y Tailwind fue una muy buena opción, ya que usé de ambos y distintos componentes y su uso es muy sencillo para lograr grandes resultados. Para los datos, prefería mantenerlo de manera local ya que me siento más cómodo hacerlo de esa forma. Las funciones más importantes, las guardé dentro de un archivo nuevo de manera externa tal como nos recomendaron en el after class. Los tiempos de las promesas, decidí colocarlas en 1 segundo, y mientras tanto, mostrará un párrafo indicando que se está cargando. Y por último, si bien coloqué las fotos de los productos mediante una URL, preferí almacenar mi logo de manera local.
 
 # Getting Started with Create React App
 
