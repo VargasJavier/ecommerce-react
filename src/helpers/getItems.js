@@ -69,7 +69,6 @@ export const setOrderFinished = async (
     totalProducts,
   };
   addCheckout(docData);
-  console.log("GETITEM: ", docData);
   await addDoc(collection(db, "purchasing"), docData);
 };
 
@@ -85,6 +84,5 @@ export const getIDFirebase = async (
   const q = query(collection(db, "purchasing"), where("email", "==", email));
 
   const querySnapshop = await getDocs(q);
-  console.log("ID: ", querySnapshop.docs[0].id);
   setID(querySnapshop.docs[0].id);
 };

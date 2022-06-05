@@ -17,10 +17,10 @@ const Purchasing = ({ checkout, id }) => {
             <br />
             <div>
               <p className='font-light text-sm'>
-                Correo: <span className='font-bold'>{email}</span> }
+                Correo: <span className='font-bold'>{email}</span>
               </p>
               <p className='font-light text-sm'>
-                Orden de compra: <span className='font-bold'>{id}</span>}
+                Orden de compra: <span className='font-bold'>{id}</span>
               </p>
               <br />
               <div className='flex justify-center'>

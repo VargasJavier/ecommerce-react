@@ -100,25 +100,33 @@ const Checkout = ({
               const email = document.getElementById("email").value;
               const address = document.getElementById("address").value;
               const totalProductos = totalProducts(cart);
+              const emailRegex =
+                /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
               if (
                 name.length > 0 &&
                 lastName.length > 0 &&
                 email.length > 0 &&
                 address.length > 0
-              )
-                await setOrderFinished(
-                  db,
-                  addDoc,
-                  collection,
-                  name,
-                  lastName,
-                  email,
-                  address,
-                  priceTotal,
-                  totalProductos,
-                  addCheckout
-                );
-              else {
+              ) {
+                //Se muestra un texto a modo de ejemplo, luego va a ser un icono
+                if (emailRegex.test(email)) {
+                  await setOrderFinished(
+                    db,
+                    addDoc,
+                    collection,
+                    name,
+                    lastName,
+                    email,
+                    address,
+                    priceTotal,
+                    totalProductos,
+                    addCheckout
+                  );
+                } else {
+                  alert("Debe ingresar un email válido");
+                  e.preventDefault();
+                }
+              } else {
                 alert("Recuerda llenar todos los campos");
                 e.preventDefault();
               }

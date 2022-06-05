@@ -15,22 +15,21 @@ const PurchasingContainer = () => {
   const cartContext = useContext(CartContext);
   const { checkout } = cartContext;
   const [id, setID] = useState("");
-  const db = getFirestore();
-
-  const getIDFirebasePromise = async () => {
-    id = await getIDFirebase(
-      db,
-      collection,
-      getDocs,
-      query,
-      where,
-      checkout.email,
-      setID
-    );
-    console.log("ID PURCHASE:", id);
-  };
 
   useEffect(() => {
+    const db = getFirestore();
+    const getIDFirebasePromise = async () => {
+      await getIDFirebase(
+        db,
+        collection,
+        getDocs,
+        query,
+        where,
+        checkout.email,
+        setID
+      );
+    };
+
     getIDFirebasePromise();
   }, []);
 

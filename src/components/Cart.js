@@ -4,12 +4,14 @@ import ItemCartList from "./ItemCartList";
 
 const Cart = () => {
   const cartContext = useContext(CartContext);
-  const { cart, removeItem, total, totalProducts, totalPrice } = cartContext;
+  const { cart, clear, removeItem, total, totalProducts, totalPrice } =
+    cartContext;
 
   return (
     <>
       <ItemCartList
         items={cart}
+        clear={clear}
         removeItem={removeItem}
         total={total}
         totalProducts={totalProducts}

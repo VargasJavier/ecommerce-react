@@ -5,7 +5,7 @@ const ItemCart = ({ item, removeItem }) => {
   return (
     <Link
       to={`/item/${item.id}`}
-      className='flex justify-between rounded p-2 my-2 items-center w-full mobile:w-4/5 mobile:p-0 tablet:w-2/3 laptop:w-2/5 desktop:w-1/4'
+      className='flex justify-between rounded p-2 my-2 items-center w-full'
     >
       <section className='flex items-center'>
         <div className='rounded'>

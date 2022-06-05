@@ -4,7 +4,7 @@ export const CartContext = createContext([]);
 
 const CartProvider = (props) => {
   const [cart, setCart] = useState([]);
-  const [total, setTotal] = useState(0);
+  const total = 0;
   const [checkout, setCheckout] = useState({});
   // Métodos recomendados para el carrito
   const addItem = (item, qty) => {
@@ -43,7 +43,8 @@ const CartProvider = (props) => {
   };
 
   const clear = () => {
-    // Remover todos los items
+    // Remover todos los item
+    console.log("HOLA");
     setCart([]);
   };
 
@@ -64,6 +65,7 @@ const CartProvider = (props) => {
           setCart,
           total,
           checkout,
+          clear: clear,
           addToCart: addItem,
           removeItem: removeItem,
           totalProducts: totalProducts,
